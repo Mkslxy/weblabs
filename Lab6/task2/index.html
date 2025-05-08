@@ -1,0 +1,67 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lab6.1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+          rel="stylesheet">
+    <link rel="icon" href="public/honeybee_iphone.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<nav class="navbar">
+    <div class="block-wrapper navbar-content">
+        <div class="logo-container">
+            <span class="variant-text">lab 6</span>
+        </div>
+        <h1 class="lab-number">
+            task 2
+        </h1>
+    </div>
+</nav>
+<main>
+    <div class="row-wrapper">
+        <div class="section">
+            <div class="container">
+                <h1>Список завдань</h1>
+                <form id="todo-form">
+                    <label class="add-field">
+                        <input type="text" id="new-task" placeholder="Нове завдання" required/>
+                        <button type="submit">Додати</button>
+                    </label>
+
+                    <label class="sort-selector">
+                        <select id="sort-options">
+                            <option value="created">Сортувати за датою створення</option>
+                            <option value="status">Сортувати за станом виконання</option>
+                            <option value="updated">Сортувати за датою оновлення</option>
+                        </select>
+                    </label>
+                </form>
+                <hr>
+                <ul id="task-list"></ul>
+            </div>
+
+            <div id="edit-modal" class="modal">
+                <div class="modal-content">
+                    <div>
+                        <span id="close-modal" class="close">&times;</span>
+                        <h2>Редагувати завдання</h2>
+                    </div>
+                    <input type="text" id="edit-task-input"/>
+                    <button id="save-edit-btn">Зберегти</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+</body>
+</html>

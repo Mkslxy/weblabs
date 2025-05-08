@@ -1,0 +1,73 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<nav class="navbar">
+    <div class="block-wrapper navbar-content">
+        <div class="logo-container">
+            <span class="variant-text">lab 6</span>
+        </div>
+        <h1 class="lab-number">
+            task 1
+        </h1>
+    </div>
+</nav>
+
+<main>
+    <div class="row-wrapper">
+        <div class="products-section">
+            <h1>Available products:</h1>
+            <div class="filters">
+                <div class="sort">
+                    <label for="sort">Сортувати за:</label>
+                    <select id="sort">
+                        <option value="regular">Звичайно</option>
+                        <option value="price-low-high">Ціна ↑</option>
+                        <option value="price-high-low">Ціна ↓</option>
+                        <option value="create-low-low">Дата створ. ↑</option>
+                        <option value="create-high-high">Дата створ. ↓</option>
+                        <option value="edit-low-high">Дата змін. ↑</option>
+                        <option value="edit-high-high">Дата змін. ↓</option>
+                    </select>
+                </div>
+
+                <div class="category-filter">
+                    <label for="category">Категорія:</label>
+                    <select id="category">
+                        <option value="all">Усі</option>
+                    </select>
+                </div>
+                <div class="button-wrapper">
+                    <button class="btn" id="clearSortBtn" >Clear Sort</button>
+                    <button class="btn" id="clearFilterBtn" >Clear Filters</button>
+                </div>
+            </div>
+            <div class="empty-goods">
+                <h2 id="hint-text" class="hide">There are no goods.</h2>
+                <h2 id="total-price" class="hide">Total: 0$</h2>
+                <button class="btn add-button" id="showAddProductModalBtn">Add product</button>
+            </div>
+            <div class="products-container"></div>
+            <div class="product-count">
+                <p>Показано товарів: <span id="product-count">0</span></p>
+            </div>
+        </div>
+    </div>
+    <div id="snackbar" class="snackbar"></div>
+</main>
+
+
+</body>
+</html>
