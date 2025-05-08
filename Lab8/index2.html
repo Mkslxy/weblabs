@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+
+<body>
+
+    <div class="slider" id="slider">
+        <div class="slides">
+            <div class="slide"><img src="/images/1.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/images/2.jpeg" alt="Image 2"></div>
+            <div class="slide"><img src="/images/3.jpeg" alt="Image 3"></div>
+        </div>
+        <a class="prev slider-arrows" onclick="moveSlide(-1)">&#10094;</a>
+        <a class="next slider-arrows" onclick="moveSlide(1)">&#10095;</a>
+        <div class="pagination">
+            <span class="dot" onclick="currentSlideFunc(0)"></span>
+            <span class="dot" onclick="currentSlideFunc(1)"></span>
+            <span class="dot" onclick="currentSlideFunc(2)"></span>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="js/script2.js"></script>
+</body>
+
+</html>

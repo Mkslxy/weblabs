@@ -1,0 +1,80 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Висота для повного екрану */
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  
+  .slider {
+    position: relative;
+    width: 90%; /* Ширина слайдера */
+    max-width: 1500px;
+    height: 800px; /* Висота слайдера */
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .slide img {
+    width: 100%; /* Зображення займає 100% ширини слайдера */
+    height: 100%; /* Зображення займає 100% висоти слайдера */
+    object-fit: cover; /* Обрізає зображення, щоб воно заповнювало весь слайдер */
+    object-position: center; /* Центрує зображення, якщо воно обрізається */
+  }
+  
+  .slider-arrows {
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    cursor: pointer;
+    transform: translateY(-50%);
+  }
+  
+  .prev {
+    left: 20px;
+  }
+  
+  .next {
+    right: 20px;
+  }
+  
+  .pagination {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 0;
+    z-index: 2;
+  }
+  
+  .dot {
+    height: 20px;
+    width: 20px;
+    margin: 0 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: #810d0d;
+  }
+  

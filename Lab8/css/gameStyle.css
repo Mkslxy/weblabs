@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    height: 100vh;
+    overflow: hidden;
+    background:
+            linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%),
+            linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
+            linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+    animation: gradientAnimation 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Картки для гри */
+.game {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    grid-gap: 10px;
+    margin-top: 20px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card img {
+    display: none;
+    width: 80%;
+    height: 80%;
+}
+
+.card.flipped img {
+    display: block;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+/* Стилі для кнопок */
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 10px;
+    background-color: #4e54c8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8f94fb;
+}
+
+/* Таймер та рахунок */
+.timer, .score {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Контейнер гри */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+    /* Контейнер гри перед фоном */
+}
+
+.name {
+    color: #8f94fb;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pair game</title>
+    <link rel="stylesheet" href="css/gameStyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>MEMORY PAIR GAME</h1>
+        <div class="settings">
+            <div><label for="size">Розмір поля</label>
+                <label for="rows">Кількість рядків:</label>
+                <input type="number" id="rows" value="4" min="4" max="10">
+
+                <label for="columns">Кількість стовпців:</label>
+                <input type="number" id="columns" value="4" min="4" max="10">
+            </div>
+
+            <div>
+                <label for="level">Рівень складності</label>
+                <select name="level" id="lvl">
+                    <option value="easy">Легкий(3хв)</option>
+                    <option value="normal">Нормальний(2хв)</option>
+                    <option value="hard">Складний(1хв)</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="users">Кількість гравців</label>
+                <select id="users" onchange="updatePlayerCount()">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </div>
+
+            <div id="nameInputs">
+                <label for="name">Введіть ім'я</label>
+                <input type="text" id="name" placeholder="Ім'я гравця">
+                <button id="setNameBtn">OK</button>
+            </div>
+
+            <div class="usersName" id="usersName"></div>
+
+            <div id="roundInput">
+                <label for="round">Кількість раундів</label>
+                <select name="round" id="round">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <button>OK</button>
+            </div>
+
+            <div id="rounds"></div>
+
+            <button id="startBtn">Почати гру</button>
+            <button id="newGameBtn">Нова гра</button>
+            <button id="restartBtn">Рестарт</button>
+        </div>
+
+        <div class="game">
+
+        </div>
+
+        <div class="info">
+            <div class="timer" id="timer">Час: 0</div>
+            <div class="score" id="score">Рахунок: 0</div>
+        </div>
+
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+
+</html>
