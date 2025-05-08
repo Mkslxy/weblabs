@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Годинник</title>
+    <link rel="stylesheet" href="CSS/style3.css">
+</head>
+
+<body>
+    <div class="clock" id="clock">
+        <span class="hours">00</span>
+        <span class="colon">:</span>
+        <span class="minutes">00</span>
+        <span class="colon">:</span>
+        <span class="seconds">00</span>
+    </div>
+
+    <div class="timer-controls">
+        <h2>Таймер зворотного відліку</h2>
+        <label>
+            Виберіть дату і час завершення:
+             <input type="datetime-local" id="endTime"> <!--календарь для вибора дати і часу -->
+        </label>
+        <button id="startTimer">Запустити таймер</button>
+        <div class="timer" id="timer">00:00:00:00</div>
+    </div>
+
+    <!-- Календар -->
+    <div class="calendar-container">
+        <h2 id="currentMonthYear">Січень 2025</h2>
+        <div class="calendar">
+            <button id="prevMonth">←</button>
+            <div>
+                <div id="daysOfWeek"></div>
+                <div id="calendarGrid"></div>
+            </div>
+            <button id="nextMonth">→</button>
+        </div>
+    </div>
+
+    <!-- День народження -->
+    <div class="birthday-container">
+        <h2>Виберіть день народження:</h2>
+        <input type="date" id="birthdayInput">
+        <button id="calculateBirthdayTime">Порахувати час</button>
+        <div class="birthday-timer" id="birthdayCountdown">00:00:00:00</div>
+    </div>
+
+    <script src="javascript/script3.js"></script>
+</body>
+
+</html>

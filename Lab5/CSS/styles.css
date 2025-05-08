@@ -1,0 +1,63 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+}
+
+.bulb {
+    width: 100px;
+    height: 150px;
+    margin: 20px auto;
+    border-radius: 50%;
+    background-color: grey;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transition: background-color 0.3s, box-shadow 0.3s, filter 0.3s;
+}
+
+.bulb::before {
+    content: '';
+    width: 40px;
+    height: 20px;
+    background: grey;
+    position: absolute;
+    bottom: -20px;
+    left: 30px;
+    border-radius: 10px;
+}
+
+.bulb.off {
+    background-color: gray;
+    box-shadow: none;
+}
+
+.on {
+    background-color: gray;
+    box-shadow: 0 0 20px gray;
+}
+
+.regular {
+    border: 3px solid yellow;
+    background-color: yellow;
+    box-shadow: 0 0 20px yellow;
+}
+
+.energy-saving {
+    border: 3px solid green;
+    background-color: green;
+    box-shadow: 0 0 20px green;
+}
+
+.led {
+    border: 3px solid blue;
+    background-color: blue;
+    box-shadow: 0 0 20px blue;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+

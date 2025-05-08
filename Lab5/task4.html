@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/style4.css">
+</head>
+
+<body>
+    <form id="productForm">
+        <div>
+            <h3>Оформити замовлення</h3>
+            <label for="orderName">Назва товару:</label>
+            <input type="text" id="orderName">
+            <label for="orderQuantity">Кількість:</label>
+            <input type="number" id="orderQuantity">
+            <button id="orderProduct">Замовити</button>
+        </div>
+
+
+        <!-- додавання -->
+        <input type="text" id="product-name" placeholder="Назва товару" />
+        <input type="number" id="product-price" placeholder="Ціна товару" />
+        <input type="number" id="product-stock" placeholder="Кількість на складі" />
+        <button type="submit">Додати товар</button>
+
+        <!-- видалення -->
+        <input type="text" id="deleteName" placeholder="Назва товару" />
+        <button id="deleteProduct">Видалити товар</button>
+
+        <!-- оновлення -->
+
+        <input type="text" id="updateName" placeholder="Назва товару для оновлення" />
+        <input type="number" id="updatePrice" placeholder="Нова ціна товару" />
+        <input type="number" id="updateStock" placeholder="Нова кількість на складі" />
+        <button type="button" id="updateProduct">Оновити товар</button>
+
+        <!-- пошук -->
+        <input type="text" id="findName" placeholder="Назва товару для пошуку" />
+        <button type="button" id="findProduct">Знайти товар</button>
+
+        <!-- історія змін -->
+        <input type="text" id="historyName" placeholder="Назва продукту">
+         <button id="watchHistory">Переглянути історію</button>
+    </form>
+
+    <div id="productList">Каталог</div>
+    <script src="javascript/script4.js"></script>
+</body>
+
+</html>
