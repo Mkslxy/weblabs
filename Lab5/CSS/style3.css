@@ -1,0 +1,81 @@
+/* Основні стилі */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #222;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    margin: 10px 0;
+  }
+  
+  .clock, .timer, .birthday-timer {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 20px 0;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #d42dc9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #aa1e93;
+  }
+  
+  /* Календар */
+  .calendar-container {
+    margin-top: 20px;
+  }
+  
+  .calendar {
+    display: flex;
+    align-items: center;
+  }
+  
+  #calendarGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin: 10px;
+  }
+  
+  #calendarGrid div {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    color: #fff;
+  }
+  
+  #calendarGrid div:hover {
+    background-color: #444;
+    cursor: pointer;
+  }
+  
+
+  #daysOfWeek {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #444;
+}
+

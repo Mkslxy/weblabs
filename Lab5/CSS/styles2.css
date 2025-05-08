@@ -1,0 +1,75 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+}
+
+.traffic-light {
+    width: 100px;
+    height: 300px;
+    background-color: black;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+.light {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: grey;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.light.red.active {
+    background-color: red;
+    transform: scale(1.2); /* Анімація: збільшення */
+}
+
+.light.yellow.active {
+    background-color: yellow;
+    transform: scale(1.2);
+}
+
+.light.green.active {
+    background-color: green;
+    transform: scale(1.2);
+}
+
+.state-description {
+    position: absolute;
+    top: -30px;
+    font-size: 18px;
+    color: rgb(16, 235, 45);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+ /* Відображення текстового опису */
+ .state-display {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
