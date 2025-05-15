@@ -1,7 +1,6 @@
 const game = document.querySelector('.game');
 const level = document.getElementById('lvl');
 const startBtn = document.getElementById('startBtn');
-const newGameBtn = document.getElementById('newGameBtn');
 const timer = document.getElementById('timer');
 const score = document.getElementById('score');
 const namePl = document.getElementById('name');
@@ -24,7 +23,7 @@ const images = [
 let playerScore = 0;
 let interval = null;
 let flippedCards = [];
-let matched = 0;
+let matched = 0; // це лічильник пар, що збіглися.
 let totalRounds = 1;
 let currRound = 1;
 let totalCards;
@@ -36,7 +35,7 @@ function roundCount() {
 }
 
 function updateRound() {
-    const roundsDiv = document.getElementById("rounds");
+    const roundsDiv = document.getElementById("rounds"); // id rounds
     roundsDiv.innerHTML = `Раунд: ${currRound} з ${totalRounds}`;
 }
 
@@ -60,7 +59,7 @@ function endGame() {
 }
 
 function updatePlayerCount() {
-    let numUser = users.value;
+    let numUser = users.value; // кількість гравців з поля вводу
     nameInputs.innerHTML = ''; //очищає блок , щоб не було старих полів
 
     for (let i = 1; i <= numUser; i++) {
@@ -89,26 +88,23 @@ function saveNames() {
     usersNamesDiv.innerHTML = '';
 
     for (let i = 1; i <= numUser; i++) {
-        const name = document.getElementById(`name${i}`).value;
+        const name = document.getElementById(`name${i}`).value; // імя з поля вводу
         const nameDiv = document.createElement('div');
         nameDiv.textContent = `Гравець ${i}: ${name}`;
         usersNamesDiv.appendChild(nameDiv);
     }
 }
 
-
-
 setNameBtn.addEventListener('click', () => {
-    let playerName = namePl.value.trim();
-    const nameDiv = document.querySelector('.name');
+    let playerName = namePl.value.trim(); // видалення зайвих пробілів з переду і з заду
+    const nameDiv = document.querySelector('.name'); // знаходимо елемент для відображення імені
 
     if (playerName) {
-        nameDiv.textContent = playerName;
+        nameDiv.textContent = playerName; // виводимо гравця в елемент на сторінці
     } else {
         alert('Введіть імя');
     }
 });
-
 
 function startTimer() {
     const levelVal = level.value;
@@ -118,7 +114,7 @@ function startTimer() {
         timeLeft--;
         timer.textContent = `Час: ${timeLeft}`;
         if (timeLeft <= 0) {
-            clearInterval(interval);
+            clearInterval(interval);// зупиняємо таймер
             alert('Час закінчився! Спробуй ще');
             resetGame();
         }
@@ -131,8 +127,8 @@ function updateScore() {
 
 function flipCard(card) {
     if (flippedCards.length < 2 && !card.classList.contains('flipped')) {
-        card.classList.add('flipped');
-        card.querySelector('img').style.display = 'block';
+        card.classList.add('flipped'); // візуально показати , що карта перевернута
+        card.querySelector('img').style.display = 'block'; // показуємо зображення на карті
         flippedCards.push(card);
         if (flippedCards.length === 2) checkMatch();
     }
@@ -146,13 +142,13 @@ function shuffleArray(array) {
 }
 
 function checkMatch() {
-    const [first, second] = flippedCards;
+    const [first, second] = flippedCards; // беремо дві перевернуті карти
     if (first.querySelector('img').src === second.querySelector('img').src) {
         matched++;
         console.log(matched);
         playerScore++;
         updateScore();
-        flippedCards = [];
+        flippedCards = []; // очищаєм масив перевернутих карток (карта вже знайдена)
         if (matched === totalCards / 2) {
             clearInterval(interval);
             alert(`Вітаю! Ви виграли! Ваш рахунок: ${playerScore}`);
@@ -169,10 +165,7 @@ function checkMatch() {
     }
 }
 
-
-
 function startGame() {
-
     resetGame();
 
     const rows = parseInt(rowsInput.value);
@@ -185,8 +178,8 @@ function startGame() {
         return;
     }
 
-    const cardImages = images.slice(0, totalCards / 2);
-    const allCards = [...cardImages, ...cardImages];
+    const cardImages = images.slice(0, totalCards / 2); // беремо половину картинок з масиву
+    const allCards = [...cardImages, ...cardImages]; // дублюємо картинки
     shuffleArray(allCards);
 
     allCards.forEach((image) => {
@@ -205,10 +198,6 @@ function startGame() {
     updateRound();
     startTimer();
 }
-
-
-newGameBtn.addEventListener('click', resetGame);
-
 
 startBtn.addEventListener('click', () => {
     roundCount();
@@ -233,7 +222,6 @@ function resetAll() {
     users.value = 1;
     round.value = 1;
 
-
     nameInputs.innerHTML = `
         <label for="name">Введіть ім'я</label>
         <input type="text" id="name" placeholder="Ім'я гравця">
@@ -251,7 +239,6 @@ function resetAll() {
         }
     });
 
-
     document.getElementById('usersName').innerHTML = '';
     document.getElementById('rounds').innerHTML = '';
     score.textContent = 0;
@@ -262,4 +249,6 @@ function resetAll() {
 }
 
 restartBtn.addEventListener('click', resetAll);
+users.addEventListener('change', updatePlayerCount);
+updatePlayerCount();
 

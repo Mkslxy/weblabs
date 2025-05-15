@@ -29,10 +29,10 @@ function currentSlideFunc(index) {
 
 
 function updateSlider() {
-  slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-
+  slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`; // контейнер на необхідну позицію
+//
   dots.forEach(dot => dot.classList.remove('active'));
-  dots[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active'); // active до поточного dots
 }
 
 function startAutoplay() {
@@ -44,7 +44,7 @@ function startAutoplay() {
 }
 
 
-slider.addEventListener('mouseenter', () => {
+slider.addEventListener('mouseenter', () => { // при навведені курсора на слайдер - зупинка мого аутоплея
   clearInterval(autoplayInterval);
 });
 
